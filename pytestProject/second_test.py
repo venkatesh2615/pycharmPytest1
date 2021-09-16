@@ -5,5 +5,6 @@ from pytest import mark
 def test_addition(x, y, z):
     assert x + y == z
 
+
 def test_addition2(passParam):
     assert passParam[0] + passParam[1] == passParam[2]
