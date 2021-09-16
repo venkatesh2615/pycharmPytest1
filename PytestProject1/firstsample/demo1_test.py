@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 
@@ -8,4 +10,11 @@ class Test_demo:
 
 
     def test_response_url(self):
-        assert self.response.url == "https://www.google.com/"
+        assert self.response.url == "https://jsonplaceholder.typicode.com/todos/"
+
+
+    def test_response_data(self):
+        data = json.loads(self.response.content)
+        for i in data:
+            if i.get('userId') == 8:
+                print(i.get('title'))
