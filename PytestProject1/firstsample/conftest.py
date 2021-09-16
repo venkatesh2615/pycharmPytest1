@@ -8,5 +8,5 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope='class')
 def response(request):
-    request.cls.response = requests.get("https://www.google.com/")
+    request.cls.response = requests.get("https://jsonplaceholder.typicode.com/todos/")
     return request.cls.response
