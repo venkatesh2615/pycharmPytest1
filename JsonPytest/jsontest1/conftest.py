@@ -21,3 +21,7 @@ def response_post(request):
 @pytest.fixture()
 def response_put():
     return requests.put(f"{base_url}api/user/2", data={"name":"venkatesan","job":"python Developer"})
+
+@pytest.fixture()
+def delete_response():
+    return requests.delete(f"{base_url}api/user/2")
